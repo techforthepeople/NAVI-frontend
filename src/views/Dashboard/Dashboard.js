@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
+import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import {
   Badge,
   Button,
@@ -30,6 +31,11 @@ const brandSuccess = getStyle('--success')
 const brandInfo = getStyle('--info')
 const brandWarning = getStyle('--warning')
 const brandDanger = getStyle('--danger')
+
+const Map = ReactMapboxGl({
+  accessToken:
+    process.env.MAPBOX_ACCESS_TOKEN
+});
 
 // Card Chart 1
 const cardChartData1 = {
@@ -483,6 +489,19 @@ class Dashboard extends Component {
 
     return (
       <div className="animated fadeIn">
+        <Row>
+          <Map
+            style="mapbox://styles/mapbox/streets-v9"
+            containerStyle={{
+              height: '500px',
+              width: '500px'
+            }}
+          >
+            <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
+              <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
+            </Layer>
+          </Map>;
+        </Row>
         <Row>
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-info">
