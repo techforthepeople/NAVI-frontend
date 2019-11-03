@@ -33,7 +33,7 @@ const brandWarning = getStyle('--warning')
 const brandDanger = getStyle('--danger')
 
 const Map = ReactMapboxGl({
-  accessToken: process.env.MAPBOX_ACCESS_TOKEN
+  accessToken: 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw'
 });
 
 // Card Chart 1
@@ -497,7 +497,7 @@ class Dashboard extends Component {
             }}
           >
             <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-              <Feature coordinates={[-73.94863270, 40.82152840]} />
+              <Feature coordinates={[40.8215, -73.9478]} />
             </Layer>
           </Map>
         </Row>
@@ -523,7 +523,7 @@ class Dashboard extends Component {
                     <td className="text-center">
                       <div className="avatar">
                         <img src={'assets/img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-success"></span>
+                        <span className="avatar-status badge-secondary"></span>
                       </div>
                     </td>
                     <td>
@@ -541,7 +541,7 @@ class Dashboard extends Component {
                           <strong>98%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted"> reach immediately</small>
+                          <small> reach immediately</small>
                         </div>
                       </div>
                       <Progress className="progress-xs" color="danger" value="98" />
@@ -549,15 +549,15 @@ class Dashboard extends Component {
                     <td className="text-center">
                       <Row>
                         <Col col="1" className="mb-3 tag-col">
-                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .2 + 'em' }}>Incapacitated</Button>
+                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Incapacitated</Button>
                         </Col>
                         <Col col="1" className="mb-3 tag-col">
-                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .2 + 'em' }}>Low O2 Sat</Button>
+                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Low O2 Sat</Button>
                         </Col>
                       </Row>
                       <Row>
                         <Col col="1" className="mb-3 tag-col">
-                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .2 + 'em' }}>Brady</Button>
+                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Brady</Button>
                         </Col>
                       </Row>
                     </td>
@@ -566,7 +566,7 @@ class Dashboard extends Component {
                     <td className="text-center">
                       <div className="avatar">
                         <img src={'assets/img/avatars/2.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-danger"></span>
+                        <span className="avatar-status badge-secondary"></span>
                       </div>
                     </td>
                     <td>
@@ -576,29 +576,38 @@ class Dashboard extends Component {
                         <span>Recurring</span> | Registered: Jan 1, 2015
                       </div>
                     </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
+                    <td className="float-right">
+                      <small className="text-muted" >Corner street of Bodega </small>
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>10%</strong>
+                          <strong>90%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">reach immediately</small>
                         </div>
                       </div>
-                      <Progress className="progress-xs" color="info" value="10" />
+                      <Progress className="progress-xs" color="danger" value="91" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
+                    <Row>
+                        <Col col="1" className="mb-3 tag-col">
+                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Abrasion on the knee</Button>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col col="1" className="mb-3 tag-col">
+                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Brady</Button>
+                        </Col>
+                      </Row>
                     </td>
                   </tr>
                   <tr>
                     <td className="text-center">
                       <div className="avatar">
                         <img src={'assets/img/avatars/3.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-warning"></span>
+                        <span className="avatar-status badge-secondary"></span>
                       </div>
                     </td>
                     <td>
@@ -608,7 +617,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
+                      <small className=''>Williamsburg Bridge</small>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -616,13 +625,22 @@ class Dashboard extends Component {
                           <strong>74%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">need medical attention</small>
                         </div>
                       </div>
                       <Progress className="progress-xs" color="warning" value="74" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
+                    <Row>
+                        <Col col="1" className="mb-3 tag-col">
+                          <Button color="warning" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Pressure around chest</Button>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col col="1" className="mb-3 tag-col">
+                          <Button color="warning" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Incapacitated</Button>
+                        </Col>
+                      </Row>
                     </td>
                   </tr>
                   <tr>
@@ -639,18 +657,30 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
+                      <small>Between 53rd and 2nd ave</small>
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>98%</strong>
+                          <strong>48%</strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted">needs medical attention</small>
                         </div>
                       </div>
-                      <Progress className="progress-xs" color="danger" value="98" />
+                      <Progress className="progress-xs" color="warning" value="72" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
+                    <Row>
+                        <Col col="1" className="mb-3 tag-col">
+                          <Button color="warning" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Injury around chest</Button>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col col="1" className="mb-3 tag-col">
+                          <Button color="warning" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Auto incident</Button>
+                        </Col>
+                      </Row>
                     </td>
                   </tr>
                   <tr>
@@ -667,21 +697,30 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
+                      <small>34th st and 2nd ave</small>
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>22%</strong>
+                          <strong>40%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">success!</small>
                         </div>
                       </div>
-                      <Progress className="progress-xs" color="info" value="22" />
+                      <Progress className="progress-xs" color="success" value="22" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
+                      <Row>
+                      <Col col="1" className="mb-3 tag-col">
+                        <Button color="success" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Water break</Button>
+                      </Col> 
+                      <Col col="1" className="mb-3 tag-col">
+                        <Button color="success" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Giving birth</Button>
+                      </Col> 
+                      </Row>
+                      <Row>
+                      </Row>
                     </td>
                   </tr>
                   <tr>
@@ -698,32 +737,29 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
+                      <small>23rd and 5ave</small>
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>43%</strong>
+                          <strong>23%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">investigation ongoing</small>
                         </div>
                       </div>
-                      <Progress className="progress-xs" color="success" value="43" />
+                      <Progress className="progress-xs" color="info" value="20" />
                     </td>
                     <td className="text-center">
-                      <Row>
+                    <Row>
                       <Col col="1" className="mb-3 tag-col">
-                        <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .2 + 'em' }}>Incapacitated</Button>
+                        <Button color="info" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Assaulted</Button>
                       </Col> 
                       <Col col="1" className="mb-3 tag-col">
-                        <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .2 + 'em' }}>Low O2 Sat</Button>
+                        <Button color="info" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Distress</Button>
                       </Col> 
                       </Row>
                       <Row>
-                      <Col col="1" className="mb-3 tag-col">
-                        <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .2 + 'em' }}>Brady</Button>
-                      </Col> 
                       </Row>
                     </td>
                   </tr>
