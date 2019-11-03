@@ -710,16 +710,6 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="success" value="22" />
                     </td>
                     <td className="text-center">
-                      <Row>
-                      <Col col="1" className="mb-3 tag-col">
-                        <Button color="success" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Water break</Button>
-                      </Col> 
-                      <Col col="1" className="mb-3 tag-col">
-                        <Button color="success" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Giving birth</Button>
-                      </Col> 
-                      </Row>
-                      <Row>
-                      </Row>
                     </td>
                   </tr>
                   <tr>
