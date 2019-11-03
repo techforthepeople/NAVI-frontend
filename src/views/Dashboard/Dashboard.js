@@ -33,7 +33,7 @@ const brandWarning = getStyle('--warning')
 const brandDanger = getStyle('--danger')
 
 const Map = ReactMapboxGl({
-  accessToken: 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw'
+  accessToken: process.env.MAPBOX_ACCESS_TOKEN
 });
 
 // Card Chart 1
