@@ -576,7 +576,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="float-right">
-                      <small className="text-muted" >Corner street of Bodega </small>
+                      <small>Corner of Bodega Negra </small>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -616,7 +616,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small className=''>Williamsburg Bridge</small>
+                      <small className=''>Front of Old Campus</small>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -656,7 +656,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>Between 53rd and 2nd ave</small>
+                      <small>St. Nicholas Ave between 145th and 143rd</small>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -696,7 +696,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>34th st and 2nd ave</small>
+                      <small>St. Nicholas Ave between 145 and 144th</small>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -736,7 +736,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>23rd and 5ave</small>
+                      <small>Steinman Hall Court</small>
                     </td>
                     <td>
                       <div className="clearfix">
