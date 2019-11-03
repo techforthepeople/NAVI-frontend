@@ -656,7 +656,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>St. Nicholas Ave between 145th and 143rd</small>
+                      <small>St. Nicholas Ave <br/>between 145th and 143rd</small>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -696,7 +696,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>St. Nicholas Ave between 145 and 144th</small>
+                      <small>St. Nicholas Ave <br/>between 145 and 144th</small>
                     </td>
                     <td>
                       <div className="clearfix">
