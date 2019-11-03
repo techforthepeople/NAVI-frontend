@@ -548,7 +548,7 @@ class Dashboard extends Component {
                     <td className="text-center">
                       <Row>
                         <Col col="1" className="mb-3 tag-col">
-                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Incapacitated</Button>
+                          <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Unconscious</Button>
                         </Col>
                         <Col col="1" className="mb-3 tag-col">
                           <Button color="danger" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Low O2 Sat</Button>
@@ -637,7 +637,7 @@ class Dashboard extends Component {
                       </Row>
                       <Row>
                         <Col col="1" className="mb-3 tag-col">
-                          <Button color="warning" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Incapacitated</Button>
+                          <Button color="warning" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Unconscious</Button>
                         </Col>
                       </Row>
                     </td>
