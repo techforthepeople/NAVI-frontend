@@ -540,7 +540,7 @@ class Dashboard extends Component {
                           <strong>98%</strong>
                         </div>
                         <div className="float-right">
-                          <small> reach immediately</small>
+                          <small className='text-muted'> reach immediately</small>
                         </div>
                       </div>
                       <Progress className="progress-xs" color="danger" value="98" />
@@ -576,7 +576,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="float-right">
-                      <small>Corner of Bodega Negra </small>
+                      Corner of Bodega Negra 
                     </td>
                     <td>
                       <div className="clearfix">
@@ -616,7 +616,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small className=''>Front of Old Campus</small>
+                      Front of Old Campus
                     </td>
                     <td>
                       <div className="clearfix">
@@ -656,7 +656,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>St. Nicholas Ave <br/>between 145th and 143rd</small>
+                      St. Nicholas Ave <br/>between 145th and 143rd
                     </td>
                     <td>
                       <div className="clearfix">
@@ -696,7 +696,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>St. Nicholas Ave <br/>between 145 and 144th</small>
+                      St. Nicholas Ave <br/>between 145 and 144th
                     </td>
                     <td>
                       <div className="clearfix">
@@ -726,7 +726,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      <small>Steinman Hall Court</small>
+                      Steinman Hall Court
                     </td>
                     <td>
                       <div className="clearfix">
