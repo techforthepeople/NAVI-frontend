@@ -9,3 +9,12 @@
 @import '~simple-line-icons/css/simple-line-icons.css';
 // Import Main styles for this application
 @import './scss/style.scss';
+
+
+.tag-col {
+    padding-left: .2em;
+    padding-right: .2em;
+    padding-top: .1em;
+    padding-bottom:.1em;
+    margin-bottom: .1em !important;
+}
