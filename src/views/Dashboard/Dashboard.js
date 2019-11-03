@@ -701,10 +701,10 @@ class Dashboard extends Component {
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>40%</strong>
+                          <strong>22%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">success!</small>
+                          <small className="text-muted">Sent update on victim at Cafe One</small>
                         </div>
                       </div>
                       <Progress className="progress-xs" color="success" value="22" />
@@ -744,16 +744,13 @@ class Dashboard extends Component {
                           <strong>23%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">investigation ongoing</small>
+                          <small className="text-muted"></small>
                         </div>
                       </div>
                       <Progress className="progress-xs" color="info" value="20" />
                     </td>
                     <td className="text-center">
-                    <Row>
-                      <Col col="1" className="mb-3 tag-col">
-                        <Button color="info" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Assaulted</Button>
-                      </Col> 
+                    <Row> 
                       <Col col="1" className="mb-3 tag-col">
                         <Button color="info" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Distress</Button>
                       </Col> 
