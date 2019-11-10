@@ -1,6 +1,6 @@
 Our web app frontend for the 2019 Tech To Protect challenge, powered by [https://github.com/coreui/coreui-free-react-admin-template](Core UI).
 
-#  NAVI (Solidarity) - Web Application/Dashboard
+#  Solidarity - Web Applicaltion/Dashboard
 
 Winning soultion for IBM's TechToProtect Challenege! Web Application for Emergency Responders. Built in conjunction with IoT Device and Mobile Application. Click here for information https://github.com/techforthepeople
 
