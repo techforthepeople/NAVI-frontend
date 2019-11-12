@@ -17,8 +17,8 @@ function UserRow(props) {
   }
 
   return (
-    <tr key={user.id.toString()}>
-      <th scope="row"><Link to={userLink}>{user.id}</Link></th>
+    <tr>
+    <th scope="row"><Link to={userLink}>{user.firstName} {user.lastName}</Link></th>
       <td><Link to={userLink}>{user.name}</Link></td>
       <td>{user.registered}</td>
       <td>{user.role}</td>
@@ -31,7 +31,7 @@ class Users extends Component {
 
   render() {
 
-    const userList = usersData.filter((user) => user.id < 10)
+    // const userList = usersData.filter((user) => user.id < 10)
 
     return (
       <div className="animated fadeIn">
@@ -45,7 +45,7 @@ class Users extends Component {
                 <Table responsive hover>
                   <thead>
                     <tr>
-                      <th scope="col">id</th>
+                      {/* <th scope="col">id</th> */}
                       <th scope="col">name</th>
                       <th scope="col">registered</th>
                       <th scope="col">role</th>
@@ -53,7 +53,7 @@ class Users extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {userList.map((user, index) =>
+                    {usersData.map((user, index) =>
                       <UserRow key={index} user={user}/>
                     )}
                   </tbody>
