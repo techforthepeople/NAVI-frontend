@@ -4,13 +4,12 @@ import { Card, CardBody, CardHeader, Col, Row, Table } from 'reactstrap';
 import usersData from './UsersData'
 
 class User extends Component {
-
+  
   render() {
 
-    const user = usersData.find( user => user.id.toString() === this.props.match.params.id)
-
-    const userDetails = user ? Object.entries(user) : [['id', (<span><i className="text-muted icon-ban"></i> Not found</span>)]]
-
+    // const user = usersData.find( user => user.authId === this.props.match.params.id)
+    // const userDetails = user ? Object.entries(user) : [['id', (<span><i className="text-muted icon-ban"></i> Not found</span>)]]
+    console.log(usersData)
     return (
       <div className="animated fadeIn">
         <Row>
@@ -23,14 +22,16 @@ class User extends Component {
                   <Table responsive striped hover>
                     <tbody>
                       {
-                        userDetails.map(([key, value]) => {
+                        usersData.map((item) => {
+                          console.log(item)
                           return (
-                            <tr key={key}>
-                              <td>{`${key}:`}</td>
-                              <td><strong>{value}</strong></td>
+                            <tr>
+                              <td>{`${item.firstName} ${item.lastName}:`}</td>
+                              <td><strong>{item.email}</strong></td>
                             </tr>
                           )
                         })
+                        
                       }
                     </tbody>
                   </Table>
