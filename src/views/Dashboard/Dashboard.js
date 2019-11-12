@@ -1,4 +1,5 @@
 import React, { Component, lazy, Suspense } from 'react';
+import {Link} from 'react-router-dom'
 import { Bar, Line } from 'react-chartjs-2';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import {
@@ -526,7 +527,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td>
-                      <div>Yiorgos Avraamu</div>
+                      <div><Link to='/users/1'>Yiorgos Avraamu</Link></div>
                       <div className="small text-muted">
                         <span>New</span> | Registered: Jan 1, 2015
                       </div>
