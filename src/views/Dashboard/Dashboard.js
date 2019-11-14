@@ -477,6 +477,7 @@ class Dashboard extends Component {
         bearing: 0,
         pitch: 0
       },
+      popupInfo: null,
     };
   }
 
@@ -522,7 +523,7 @@ class Dashboard extends Component {
             {...viewport}
             width="100vw"
             height="300px"
-            mapStyle="mapbox://styles/mapbox/dark-v9"
+            mapStyle="mapbox://styles/mapbox/streets-v9"
             onViewportChange={this._updateViewport}
             mapboxApiAccessToken={TOKEN}
           >
@@ -531,7 +532,7 @@ class Dashboard extends Component {
               longitude= {-0.2416815} 
               latitude= {51.5285582}
               anchor="bottom" >
-              <img height="15" width="15" src="https://image.flaticon.com/icons/svg/149/149060.svg" />
+              <img height="15" width="15" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY"})}/>
             </Marker>
             
           </MapGL>
