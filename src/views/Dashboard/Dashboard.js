@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react';
 import {Link} from 'react-router-dom'
 import { Bar, Line } from 'react-chartjs-2';
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl';
 import {
   Badge,
   Button,
@@ -32,9 +32,13 @@ const brandInfo = getStyle('--info')
 const brandWarning = getStyle('--warning')
 const brandDanger = getStyle('--danger')
 
+
 const Map = ReactMapboxGl({
-  accessToken: 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw'
+  accessToken: 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw',
+  center: [41.9995, -73.0478],
 });
+
+
 
 // Card Chart 1
 const cardChartData1 = {
@@ -497,8 +501,13 @@ class Dashboard extends Component {
             }}
           >
             <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-              <Feature coordinates={[40.8215, -73.9478]} />
+              <Feature coordinates={[41.9995, -73.0478]} />
             </Layer>
+            <Marker
+              coordinates={[-0.2416815, 51.5285582]}
+              anchor="bottom" >
+              <img height="15" width="15" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={()=>{alert("Hello!")}}/>
+            </Marker>
           </Map>
         </Row>
 
@@ -577,7 +586,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="float-right">
-                      Corner of Bodega Negra 
+                      Corner of Bodega Negra
                     </td>
                     <td>
                       <div className="clearfix">
@@ -741,10 +750,10 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="success" value="20" />
                     </td>
                     <td className="text-center">
-                    <Row> 
+                    <Row>
                       <Col col="1" className="mb-3 tag-col">
                         <Button color="info" size="sm" className="btn-pill" style={{ fontSize: .5 + 'em' }}>Distress</Button>
-                      </Col> 
+                      </Col>
                       </Row>
                       <Row>
                       </Row>
@@ -755,8 +764,8 @@ class Dashboard extends Component {
             </div>
           </div>
         </Row>
- 
-        
+
+
       </div>
     );
   }
