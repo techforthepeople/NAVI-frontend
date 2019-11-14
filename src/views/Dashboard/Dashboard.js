@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react';
 import {Link} from 'react-router-dom'
 import { Bar, Line } from 'react-chartjs-2';
-import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl';
+import MapGL, { Marker, Popup, NavigationControl, FullscreenControl } from 'react-map-gl';
 import {
   Badge,
   Button,
@@ -23,7 +23,10 @@ import {
   Table,
 } from 'reactstrap';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
-import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
+import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
+
+
+
 const Widget03 = lazy(() => import('../../views/Widgets/Widget03'));
 
 const brandPrimary = getStyle('--primary')
@@ -33,12 +36,7 @@ const brandWarning = getStyle('--warning')
 const brandDanger = getStyle('--danger')
 
 
-const Map = ReactMapboxGl({
-  accessToken: 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw',
-  center: [41.9995, -73.0478],
-});
-
-
+const TOKEN = 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw'
 
 // Card Chart 1
 const cardChartData1 = {
@@ -471,6 +469,13 @@ class Dashboard extends Component {
     this.state = {
       dropdownOpen: false,
       radioSelected: 2,
+      viewport: {
+        latitude: 40.6643,
+        longitude: -73.9385,
+        zoom: 3.5,
+        bearing: 0,
+        pitch: 0
+      },
     };
   }
 
@@ -488,27 +493,47 @@ class Dashboard extends Component {
 
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
-  render() {
+  _updateViewport = viewport => {
+    this.setState({ viewport });
+  };
 
+  _renderPopup() {
+
+    return (
+        <Popup
+          tipSize={5}
+          anchor="top"
+        latitude={40.6643}
+        longitude={-73.9385}
+          closeOnClick={false}
+          onClose={() => this.setState({ popupInfo: null })}
+        >
+        </Popup>
+    );
+  }
+
+  render() {
+    const { viewport } = this.state;
     return (
       <div className="animated fadeIn">
         <Row>
-          <Map
-            style="mapbox://styles/mapbox/streets-v9"
-            containerStyle={{
-              height: '300px',
-              width: '100vw'
-            }}
+          <MapGL
+            {...viewport}
+            width="100vw"
+            height="300px"
+            mapStyle="mapbox://styles/mapbox/dark-v9"
+            onViewportChange={this._updateViewport}
+            mapboxApiAccessToken={TOKEN}
           >
-            <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-              <Feature coordinates={[41.9995, -73.0478]} />
-            </Layer>
+            {this._renderPopup()}
             <Marker
-              coordinates={[-0.2416815, 51.5285582]}
+              longitude= {-0.2416815} 
+              latitude= {51.5285582}
               anchor="bottom" >
-              <img height="15" width="15" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={()=>{alert("Hello!")}}/>
+              <img height="15" width="15" src="https://image.flaticon.com/icons/svg/149/149060.svg" />
             </Marker>
-          </Map>
+            
+          </MapGL>
         </Row>
 
         <Row>
