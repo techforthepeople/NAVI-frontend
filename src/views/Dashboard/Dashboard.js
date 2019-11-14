@@ -36,7 +36,8 @@ const brandWarning = getStyle('--warning')
 const brandDanger = getStyle('--danger')
 
 
-const TOKEN = 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw'
+// const TOKEN = 'pk.eyJ1IjoidGVjaC1leHBsb3JlcnMiLCJhIjoiY2sxeG90YmozMDN5ZjNkcThpajNtdDFtcCJ9.V0rpcBkC3kCi71Zm_pMurw'
+const TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
 
 // Card Chart 1
 const cardChartData1 = {
