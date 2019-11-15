@@ -20,12 +20,12 @@ export default {
     },
     {
       name: 'Responders',
-      url: '/theme/colors',
+      url: '/responders',
       icon: 'icon-user',
     },
     {
       name: 'New Responder',
-      url: '/theme/typography',
+      url: '/signup',
       icon: 'icon-plus',
     },
   ],
