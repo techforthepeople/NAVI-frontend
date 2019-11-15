@@ -531,7 +531,7 @@ class Dashboard extends Component {
           >
             {/* {this._renderPopup()} */}
             <Marker
-              longitude={-122.4055773} 
+              longitude={-122.4055773}
               latitude={37.7868743}
               anchor="bottom" >
               <Link to='/users/1'>
@@ -545,17 +545,17 @@ class Dashboard extends Component {
               anchor="bottom">
               <Link to='/users/1'>
                 <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
-              </Link>            
+              </Link>
               </Marker>
-             
+
           </MapGL>
 
-         
-          
+
+
         </Row>
 
         <Row>
-          <div className="card">
+          <div className="card" id='dashboardCard'>
             <div className="card-header">
               <i className="cui-medical-cross"></i> Emergency Medical Responders
           </div>
