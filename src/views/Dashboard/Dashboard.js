@@ -471,8 +471,8 @@ class Dashboard extends Component {
       dropdownOpen: false,
       radioSelected: 2,
       viewport: {
-        latitude: 40.6643,
-        longitude: -73.9385,
+        latitude: 37.7868743,
+        longitude: -122.4055773,
         zoom: 3.5,
         bearing: 0,
         pitch: 0
