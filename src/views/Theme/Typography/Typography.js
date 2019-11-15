@@ -54,7 +54,7 @@ class Forms extends Component {
           <Col xs="12" md="6">
             <Card>
               <CardHeader>
-                <strong>Basic Form</strong> Elements
+                <strong>Register</strong> 
               </CardHeader>
               <CardBody>
                 <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
@@ -90,13 +90,8 @@ class Forms extends Component {
                   <FormGroup row>
                     <Col md='3'> 
                       <Label>Street</Label>
-                    </Col>
-                    <Col>
                       <Input type='street-address' id='street-input' name='street-input'>
                       </Input>
-                    </Col>
-
-                    <Col>
                       <Label>City</Label>
                       <Input type='city-address' id='city-input' name='city-input'>
                       </Input>
@@ -106,6 +101,10 @@ class Forms extends Component {
                       <Label>Postal</Label>
                       <Input type='postal-address' id='postal-input' name='postal-input'>
                       </Input>
+                    </Col>
+
+                    <Col>
+
                     </Col>
                   </FormGroup>
 
