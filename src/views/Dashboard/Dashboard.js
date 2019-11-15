@@ -473,13 +473,15 @@ class Dashboard extends Component {
       viewport: {
         latitude: 37.7868743,
         longitude: -122.4055773,
-        zoom: 3.5,
+        zoom: 13,
         bearing: 0,
         pitch: 0
       },
       popupInfo: null,
     };
   }
+
+
 
   toggle() {
     this.setState({
@@ -527,15 +529,29 @@ class Dashboard extends Component {
             onViewportChange={this._updateViewport}
             mapboxApiAccessToken={TOKEN}
           >
-            {this._renderPopup()}
+            {/* {this._renderPopup()} */}
             <Marker
-              longitude= {-0.2416815} 
-              latitude= {51.5285582}
+              longitude={-122.4055773} 
+              latitude={37.7868743}
               anchor="bottom" >
-              <img height="15" width="15" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY"})}/>
+              <Link to='/users/1'>
+                <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
+              </Link>
             </Marker>
-            
+
+             <Marker
+              longitude={-122.4072872}
+              latitude={37.7855014}
+              anchor="bottom">
+              <Link to='/users/1'>
+                <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
+              </Link>            
+              </Marker>
+             
           </MapGL>
+
+         
+          
         </Row>
 
         <Row>

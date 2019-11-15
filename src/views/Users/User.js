@@ -27,7 +27,7 @@ class User extends Component {
               <CardHeader>
                 <strong><i className="icon-info pr-1"></i>User id: {this.props.match.params.id}</strong>
               </CardHeader>
-              <CardImg top width="50%" src="https://i.imgur.com/uRHecNh.png" alt="Card image cap" />
+              <CardImg top width="50%" src="https://i.imgur.com/beYjElh.png" alt="Card image cap" />
               <CardBody>
                   <Table responsive striped hover>
                     <tbody>
