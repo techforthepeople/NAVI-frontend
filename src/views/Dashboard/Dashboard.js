@@ -2,6 +2,7 @@ import React, { Component, lazy, Suspense } from 'react';
 import {Link} from 'react-router-dom'
 import { Bar, Line } from 'react-chartjs-2';
 import MapGL, { Marker, Popup, NavigationControl, FullscreenControl } from 'react-map-gl';
+import axios from 'axios'
 import {
   Badge,
   Button,
@@ -478,8 +479,15 @@ class Dashboard extends Component {
         pitch: 0
       },
       popupInfo: null,
+      users: null,
     };
   }
+
+  // async componentDidMount () {
+  //   const response = await axios.get('https://solidarity-backend-030.onrender.com/users')
+  //   await this.setState({users: response.data})
+  //   console.log(this.state)
+  // }
 
 
 
@@ -517,7 +525,10 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { viewport } = this.state;
+    const { viewport, users } = this.state;
+    // if (!users) {
+    //   return 'loading...'
+    // }
     return (
       <div className="animated fadeIn">
         <Row>
@@ -540,13 +551,40 @@ class Dashboard extends Component {
             </Marker>
 
              <Marker
-              longitude={-122.4072872}
-              latitude={37.7855014}
+              longitude={-122.4075}
+              latitude={37.785}
               anchor="bottom">
               <Link to='/users/1'>
                 <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
               </Link>
               </Marker>
+
+            <Marker
+              longitude={-122.4073}
+              latitude={37.786}
+              anchor="bottom">
+              <Link to='/users/1'>
+                <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
+              </Link>
+            </Marker>
+
+            <Marker
+              longitude={-122.4071}
+              latitude={37.7855015}
+              anchor="bottom">
+              <Link to='/users/1'>
+                <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
+              </Link>
+            </Marker>
+
+            <Marker
+              longitude={-122.4072860}
+              latitude={37.7855080}
+              anchor="bottom">
+              <Link to='/users/1'>
+                <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
+              </Link>
+            </Marker>
 
           </MapGL>
 
@@ -585,7 +623,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      Front of Cafe One
+                      Front of John's Grill
                     </td>
                     <td>
                       <div className="clearfix">
@@ -628,9 +666,7 @@ class Dashboard extends Component {
                         <span>Recurring</span> | Registered: Jan 1, 2015
                       </div>
                     </td>
-                    <td className="float-right">
-                      Corner of Bodega Negra
-                    </td>
+                    <td>Front of John's Grill</td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
@@ -669,7 +705,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      Front of Old Campus
+                      Accross from <br /> Powell's St. Station
                     </td>
                     <td>
                       <div className="clearfix">
@@ -709,7 +745,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      St. Nicholas Ave <br/>between 145th and 143rd
+                      Ellis O' Farrell Garage
                     </td>
                     <td>
                       <div className="clearfix">
@@ -749,7 +785,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td className="text-center">
-                      St. Nicholas Ave <br/>between 145 and 144th
+                      Front of Macy's <br/> Men's West Entrance
                     </td>
                     <td>
                       <div className="clearfix">
