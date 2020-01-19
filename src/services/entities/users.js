@@ -12,7 +12,7 @@ export const loadUsersAction = (users) => {
 
 export const loadUsers = () => {
     return async dispatch => {
-        const response = await axios('http://localhost:8080/users');
+        const response = await axios(process.env.REACT_APP_BACKEND_URL + '/users');
         dispatch(loadUsersAction(response.data))
     }
 }
