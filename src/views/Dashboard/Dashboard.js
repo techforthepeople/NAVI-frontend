@@ -480,12 +480,11 @@ class Dashboard extends Component {
         pitch: 0
       },
       popupInfo: null,
-      users: [],
     };
   }
 
   async componentDidMount () {
-    this.props.loadUsers();
+    await this.props.loadUsers();
   }
 
 
@@ -525,9 +524,11 @@ class Dashboard extends Component {
 
   render() {
     const { viewport, users } = this.state;
-    if (!this.state.users.length === 0) {
+    if (this.props.users.length === 0) {
       return 'loading...'
     }
+    console.log(this.props.users)
+
     return (
       <div className="animated fadeIn">
         <Row>
@@ -541,9 +542,9 @@ class Dashboard extends Component {
           >
             {/* {this._renderPopup()} */}
 
-            {this.state.users.map((user) => <Marker
-              longitude={Number(user.location_histories[0].long).toFixed(4)}
-              latitude={Number(user.location_histories[0].lat).toFixed(4)}
+            {this.props.users.map((user) => <Marker
+              longitude={Number(user.location_histories[0].long)}
+              latitude={Number(user.location_histories[0].lat)}
               anchor="bottom" >
               <Link to='/users/1'>
                 <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
