@@ -30,9 +30,9 @@
 
 const usersData = [{
   authId: '',
-  email: 'fire@gmail.com',
-  firstName: 'John',
-  lastName: 'Smith',
+  email: 'jsalazar@example.com',
+  firstName: 'Julie',
+  lastName: 'Salazar',
   password: 'fdny1234',
   sensorId: null
 },

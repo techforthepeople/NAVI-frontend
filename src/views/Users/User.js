@@ -6,8 +6,8 @@ import usersData from './UsersData'
 const userData = {
   authId: '',
   email: 'fire@gmail.com',
-  firstName: 'John',
-  lastName: 'Smith',
+  firstName: 'Jenna',
+  lastName: 'Thompson',
   sensorId: 1,
   pressure: 80.5,
   humidity: 80,
