@@ -25,7 +25,8 @@ import {
 } from 'reactstrap';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
-
+import {loadUsers} from '../../services/store'
+import { connect } from 'react-redux'
 
 
 const Widget03 = lazy(() => import('../../views/Widgets/Widget03'));
@@ -479,15 +480,13 @@ class Dashboard extends Component {
         pitch: 0
       },
       popupInfo: null,
-      users: null,
+      users: [],
     };
   }
 
-  // async componentDidMount () {
-  //   const response = await axios.get('https://solidarity-backend-030.onrender.com/users')
-  //   await this.setState({users: response.data})
-  //   console.log(this.state)
-  // }
+  async componentDidMount () {
+    this.props.loadUsers();
+  }
 
 
 
@@ -526,9 +525,9 @@ class Dashboard extends Component {
 
   render() {
     const { viewport, users } = this.state;
-    // if (!users) {
-    //   return 'loading...'
-    // }
+    if (!this.state.users.length === 0) {
+      return 'loading...'
+    }
     return (
       <div className="animated fadeIn">
         <Row>
@@ -541,16 +540,18 @@ class Dashboard extends Component {
             mapboxApiAccessToken={TOKEN}
           >
             {/* {this._renderPopup()} */}
-            <Marker
-              longitude={-122.4055773}
-              latitude={37.7868743}
+
+            {this.state.users.map((user) => <Marker
+              longitude={Number(user.location_histories[0].long).toFixed(4)}
+              latitude={Number(user.location_histories[0].lat).toFixed(4)}
               anchor="bottom" >
               <Link to='/users/1'>
                 <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
               </Link>
-            </Marker>
+            </Marker>)}
+       
 
-             <Marker
+             {/* <Marker
               longitude={-122.4075}
               latitude={37.785}
               anchor="bottom">
@@ -584,7 +585,7 @@ class Dashboard extends Component {
               <Link to='/users/1'>
                 <img height="20" width="20" src="https://image.flaticon.com/icons/svg/149/149060.svg" onClick={() => this.setState({ popupInfo: "HEY HEY HEY" })} />
               </Link>
-            </Marker>
+            </Marker> */}
 
           </MapGL>
 
@@ -850,4 +851,14 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+const mapDispatchToProps = dispatch => ({
+  loadUsers: () => dispatch(loadUsers())
+})
+
+const mapStateToProps = state => ({
+  users: state.users.userList
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+
+
